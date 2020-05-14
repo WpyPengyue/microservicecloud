@@ -13,6 +13,13 @@ eureka:
     instance-id: gateway-9527.com # 自定义hystrix服务名称信息
     prefer-ip-address: true # 访问路径可以显示ip地址
 
+zuul:
+  prefix: /wpy
+  ignored-services: "*"
+  routes:
+    mydept.serviceId: microservicecloud-dept
+    mydept.path: /mydept/**
+
 info:
   app.name: wpy-microservicecloud
   company.name: www.wpy.com
